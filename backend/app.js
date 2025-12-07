@@ -5,6 +5,7 @@ const userRoute = require("./routers/userRoute");
 const fileRoutes = require("./routers/fileRoutes");
 const productRoute = require("./routers/productRoute");
 const cartRoute = require("./routers/cartRoute");
+const orderRoute = require("./routers/orderRoute");
 // const  cartRoute  = require("./routers/cartRoute");
 
 
@@ -23,6 +24,7 @@ app.use('/api/auth', userRoute);
 app.use('/api/file', fileRoutes);
 app.use('/api/product', productRoute);
 app.use("/api/cart", cartRoute);
+app.use('/api/order',orderRoute)
 // Serve static uploaded files
 // app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
