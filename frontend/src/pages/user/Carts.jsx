@@ -7,7 +7,7 @@ import { selectItems, setItems } from "../../redux/feature/cartSlice";
 function Carts() {
   // const [items, setItems] = useState([]);
 // const[quantity,setQuantity]=useState('')
- const items=useSelector(selectItems)
+ const items=useSelector(selectItems);
     const dispatch=useDispatch()
 
     const fetchCart = async () => {

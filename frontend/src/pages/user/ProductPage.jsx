@@ -50,7 +50,7 @@ try{
 const response=await cartServices.addToCart(productId,quantity);
 dispatch(setItems(response.data.cart.items))
 setCount(count+1)
-console.log('cart resposne is:',response.data)
+console.log('cart resposnse is:',response.data)
 }catch(err){
 console.log('cart  error resposne is:',err)
 }
