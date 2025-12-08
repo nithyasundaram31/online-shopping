@@ -3,6 +3,7 @@ import cartServices from "../../services/cartServices";
 import CartServices from "../../services/cartServices";
 import { useDispatch, useSelector } from "react-redux";
 import { selectItems, setItems } from "../../redux/feature/cartSlice";
+import { Link } from "react-router-dom";
 
 function Carts() {
   // const [items, setItems] = useState([]);
@@ -89,14 +90,14 @@ console.log('increase quantity error is:',error)
          <div className=" overflow-y-scroll w-full md:w-[20%] shadow bg-gray-100  mt-2 h-64 ">
             <div className="font-semibold  mt-4 text-center">SubTotal</div>
                <div className="p-2 font-bold text-red-600 text-center">₹ {items.map((item)=>item.productId?.price * item.quantity).reduce((acc,curr)=>curr+acc,0).toLocaleString("en-IN")}</div>
-           
+           <div className="text-sm  text-center hover:text-green-500 hover:text-semibold"><Link  to='/user/cart/checkout' >[Proceed to checkout]</Link></div>
             {items.map((item)=>
                 <div className="p-2 flex flex-col items-center justify-center" key={item._id}>
                   <img  className='h-20 w-20 'src={item.productId.image}/>
                     <div> {item.productId.name}:${item.productId?.price}</div>
                     <div> quantity:${item.quantity}</div>
            
-                    </div>)}
+                    </div>)}   
                     <div className="text-black">
                          <hr className="border-t border-gray-400 my-4" />
 

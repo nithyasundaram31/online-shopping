@@ -12,6 +12,8 @@ import ManageProducts from './pages/admin/ManageProducts'
 import ProductPage from './pages/user/ProductPage'
 import Carts from './pages/user/Carts'
 
+import CheckOut from './pages/user/CheckOut'
+
 function App(){
 
 
@@ -36,6 +38,7 @@ return(
 <Route path='dashboard' element={<UserDashboardPage/>}/>
 <Route path='products' element={<ProductPage/>}/>
 <Route path='carts' element={<Carts/>}/>
+<Route path='cart/checkout' element={<CheckOut/>}/>
 </Route>
     </Routes>
     <ToastContainer/>

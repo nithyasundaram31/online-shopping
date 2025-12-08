@@ -7,6 +7,7 @@ exports.addToCart = async (req, res) => {
   try { 
        
     const userId = req.user.userId;
+    console.log('the uerId  exist in cartcontroller is:',userId)
     const { productId, quantity } = req.body;
 
     // Check if product exists
