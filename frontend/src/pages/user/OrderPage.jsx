@@ -18,7 +18,7 @@ setOrders(response.data)
     return(
         <>
         <div className="p-4  mx-auto mt-16 w-[60%] h-screen ">
-            <h1 className="text-center">Order pages</h1>
+            <h1 className="text-center text-red-600 ">Order pagesss</h1>
             {orders.map((order)=>
              <div key={order._id} className="flex  flex-col justify-center items-center">
 <div>{order.address?.name}</div>
