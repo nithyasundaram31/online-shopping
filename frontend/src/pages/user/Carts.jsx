@@ -61,22 +61,26 @@ console.log('increase quantity error is:',error)
   }
   return (
     <>
-      <div className="text-center p-4 mt-12 -mb-2">Carts</div>
+      <div className="text-center  font-semibold  text-xl p-4 mt-12 -mb-2">Carts</div>
       <div className=" p-2  flex flex-col md:flex-row  mx-auto">
         <div className="w-full md:w-[70%] md:ml-44 md:pl-4"> 
              {items.map((item,index) => (
-          <div className=' bg-green-300 p-4 m-2' key={index}>
+          <div className=' border border-gray-300 rounded p-4 m-2' key={index}>
            <div className="flex flex-col ">
-             <div>Name: {item.productId.name}</div>
-            <div>Price: ₹{item.productId.price}</div>
-            <div>Description: {item.productId.description}</div>
+             <img  className='w-16 h-16'src={item?.productId?.image}/>
+             <div><sapn className='font-semibold '>Name: </sapn>{item.productId.name}</div>
+            <div><sapn className='font-semibold '>Price: ₹</sapn>{item.productId.price}</div>
+            <div><sapn className='font-semibold '>Description: </sapn>{item.productId.description}</div>
             
-            <div>Quantity: {item.quantity}</div>
-            <div className="flex gap-2">
-              <button onClick={()=>handleIncrease(item.productId._id)} className="bg-yellow-400 px-2 transform transition active:scale-90">➕</button>
-              <div>{item.quantity}</div>
-               <button  onClick={()=>handleDecrease(item.productId._id)}className="bg-yellow-400 px-2 transform transition active:scale-90">➖</button>
-               <button  onClick={()=>handleRemove(item.productId._id)} className="px-4 py-1 rounded bg-blue-700 transform transition active:scale-90 ">Remove</button>
+            <div className=" mt-2 flex  gap-2 ">
+              <div className=" py-1 px-2 flex justify-center items-center text-center border-2 border-yellow-400 rounded-full  flex gap-2">
+                 <button onClick={()=>handleIncrease(item.productId._id)} className=" transform transition active:scale-90 ">✛</button>
+              <div className="ml-2">{item.quantity}</div>
+               <button  onClick={()=>handleDecrease(item.productId._id)}className="transform transition text-center active:scale-90 w-6 h-6">━</button>
+              
+               <button  onClick={()=>handleRemove(item.productId._id)} ><img  className=" w-4 h-4 " src='/delete.png'/></button>
+              </div>
+             
             </div>
             
            </div>
@@ -87,15 +91,15 @@ console.log('increase quantity error is:',error)
         ))}
         </div>
        
-         <div className=" overflow-y-scroll w-full md:w-[20%] shadow bg-gray-100  mt-2 h-64 ">
-            <div className="font-semibold  mt-4 text-center">SubTotal</div>
+         <div className=" overflow-y-scroll w-full md:w-[20%] shadow bg-gray-100  mt-2 h-1/2 ">
+            <div className="font-semibold  text-xl mt-4 text-center">SubTotal</div>
                <div className="p-2 font-bold text-red-600 text-center">₹ {items.map((item)=>item.productId?.price * item.quantity).reduce((acc,curr)=>curr+acc,0).toLocaleString("en-IN")}</div>
-           <div className="text-sm  text-center hover:text-green-500 hover:text-semibold"><Link  to='/user/cart/checkout' >[Proceed to checkout]</Link></div>
+           <div className="text-sm text-green-500  font-semibold text-center hover:text-green-600 "><Link  to='/user/cart/checkout' >[Proceed to checkout]</Link></div>
             {items.map((item)=>
                 <div className="p-2 flex flex-col items-center justify-center" key={item._id}>
                   <img  className='h-20 w-20 'src={item.productId.image}/>
-                    <div> {item.productId.name}:${item.productId?.price}</div>
-                    <div> quantity:${item.quantity}</div>
+                    <div className="font-semibold"> {item.productId.name}:${item.productId?.price}</div>
+                    <div className="font-semibold"> quantity:${item.quantity}</div>
            
                     </div>)}   
                     <div className="text-black">

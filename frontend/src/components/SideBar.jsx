@@ -46,7 +46,7 @@ const handleMenu=()=>{
          <div className={`${show?'hidden': 'md:block'} fixed  z-[30] md:block  bg-white shadow  w-48 h-screen`}>
                     <div className=" p-4 mt-16 flex flex-col gap-3  text-sm font-bold">
 
-                        <Link to='/admin/dashboard'>Dashboard</Link>
+                        <Link   to='/admin/dashboard'>Dashboard</Link>
                         <Link to='/admin/add-products'>Add products</Link>
                         <Link to='/admin/manage-products'>manage products</Link>
                         <div>orders</div>
@@ -60,10 +60,10 @@ const handleMenu=()=>{
          <div className={`${show?'hidden':'md:block'} fixed md:block  bg-white shadow  w-48 h-screen`}>
                     <div className=" p-4 mt-16 flex flex-col gap-3  text-sm font-bold">
 
-                        <Link to='/user/dashboard'>user Dashboard</Link>
-                        <Link to='/user/products'> Products</Link>
+                        <Link to='/user/dashboard'></Link>
+                        <Link   to='/user/products'> Products</Link>
                         <Link to='/user/carts'>Carts</Link>
-                        <div>orders</div>
+                        <Link to='/user/orders'>orders</Link>
                        <Link to='/login'>Logout</Link>
                     </div>
               

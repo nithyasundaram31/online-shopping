@@ -25,7 +25,7 @@ localStorage.setItem('token',response.data.token)
 toast.success('Login successful');
 
 if(user?.role=='user'){
-navigate('/user/dashboard')
+navigate('/user/products')
 }else{
 navigate('/admin/dashboard')
 }

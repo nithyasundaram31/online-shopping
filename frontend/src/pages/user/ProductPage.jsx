@@ -65,12 +65,12 @@ let productsSearch=products.filter((product)=>product.name.toLowerCase().include
 }
     return(
         <> 
-        <div className="bg-gray-200 p-4">
+        <div className=" p-4">
         {/* <div className="text-center mt-12 mb-4 mx-auto">Show All products </div> */}
         <div className=" md:ml-32 flex flex-col md:flex-row md:gap-6 items-center justify-center">
             <input type='text' onChange={(e)=>setSearch(e.target.value)} placeholder={placeholder} className="border-black rounded-full  border w-[100%] px-4 py-2 w-full  md:w-[50%] mb-6 mt-16 "/>
            <div className="  md:mt-10  ">
-             <select className=" p-2"  onChange={(e)=>setSelectedCategory(e.target.value)}>
+             <select className=" border rounded p-2"  onChange={(e)=>setSelectedCategory(e.target.value)}>
                 <option value=''>-select category-</option>
                 {categories.map((filter,index)=>
                 <option key={index}  value={filter}>
@@ -84,14 +84,14 @@ let productsSearch=products.filter((product)=>product.name.toLowerCase().include
         <div className=" w-full  md:w-[80%]  mx-auto md:mr-6">
      <div className=" grid grid-cols-2 md:grid-cols-3  lg:grid-cols-4  mt-4  gap-4">
             {productsSearch.map((product)=>
-        <div className="bg-white " key={product._id}>
+        <div className="bg-white border-2 rounded shadow-md  " key={product._id}>
         <div className="p-4 mb-2 flex flex-col justify-center">
              <img className='w-full md:w-full h-52 rounded' src={product.image} alt='product name'/>
 
           <div className="mt-2">name:{product.name}</div>
          <div>price:{product.price}</div>
           <div className="mb-2">price:{product.description}</div>
-          <button onClick={()=>handleCart(product._id)} className="w-full  rounded bg-blue-500 p-x-2 py-1">Add to Cart</button>
+          <button onClick={()=>handleCart(product._id)} className="w-full  rounded bg-blue-400 p-x-2 py-1.5">Add to Cart</button>
         </div>
       
          </div>
